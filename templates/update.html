@@ -1,0 +1,31 @@
+{% extends "base.html" %} 
+{% block title %}Update{% endblock %} 
+{% block content %}
+<div class="container mt-5">
+    <h4>Update Todo</h4>
+    <form method="POST" action="{{ url_for('update_todo', id=todo.id) }}">
+      <div class="mb-3">
+        <label for="new_title" class="form-label">New Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="new_title"
+          name="new_title"
+          value="{{ todo.title }}"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="new_desc" class="form-label">New Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="new_desc"
+          name="new_desc"
+          value="{{ todo.desc }}"
+        />
+      </div>
+      <button type="submit" class="btn btn-dark">Update</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
